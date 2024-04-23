@@ -48,31 +48,64 @@
             <th>Tipo documento</th>
             <th>Numero</th>
             <th>Fecha de nacimiento</th>
-            <th>Accione</th>
+            <th>Acciones</th>
+            <th>¿Tiene madre?</th>
+            <th>Serial madre</th>
+            <th>Nombre madre</th>
+            <th>Apellido madre</th>
+            <th>Tipo documento madre</th>
+            <th>Numero madre</th>
+            <th>Fecha de nacimiento madre</th>
+            <th>¿Tiene padre?</th>
+            <th>Serial padre</th>
+            <th>Nombre padre</th>
+            <th>Apellido padre</th>
+            <th>Tipo documento padre</th>
+            <th>Numero padre</th>
+            <th>Fecha de nacimiento padre</th>
+            <th>Acciones</th>
 
         </tr>
         </thead>
         <tbody>
-            <tr th:each="dato : ${ciudadano}">
-                <td th:text="${dato.serial}">Serial</td>
-                <td th:text="${dato.nombre}">nombre</td>
-                <td th:text="${dato.apellido}">apellido</td>
-                <td th:text="${dato.tipodocumento}">tipo documento</td>
-                <td th:text="${dato.documento}">numero</td>
-                <td th:text="${dato.fechanacimiento}">fecha de nacimiento</td>
-                <td >
-                    <a th:href="@{/ciudadano/modificar/{serial}(serial=${dato.serial})}" class="btn btn-info">Editar</a>
-                    <a th:href="@{/ciudadano/{serial}(serial=${dato.serial})}" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar</a>
-
-                    <script>
-                        function confirmarEliminar() {
-                            return confirm("¿Estás seguro que deseas eliminar este elemento?");
-                        }
-                    </script>
-                </td>
-
-            </tr>
+        <tr th:each="dato : ${ciudadano}">
+            <td th:text="${dato.serial}">Serial</td>
+            <td th:text="${dato.nombre}">nombre</td>
+            <td th:text="${dato.apellido}">apellido</td>
+            <td th:text="${dato.tipodocumento}">tipo documento</td>
+            <td th:text="${dato.documento}">numero</td>
+            <td th:text="${dato.fechanacimiento}">fecha de nacimiento</td>
+            <td>
+                <a th:href="@{/ciudadano/modificar/{serial}(serial=${dato.serial})}" class="btn btn-info">Editar Ciudadano</a>
+                <a th:href="@{/ciudadano/{serial}(serial=${dato.serial})}" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar Ciudadano</a>
+            </td>
+        </tr>
+        <tr th:each="dato : ${madre}">
+            <td th:text="${dato.serialm}">Serial</td>
+            <td th:text="${dato.nombrem}">nombre</td>
+            <td th:text="${dato.apellidom}">apellido</td>
+            <td th:text="${dato.tipodocumentom}">tipo documento</td>
+            <td th:text="${dato.documentom}">numero</td>
+            <td th:text="${dato.fechanacimientom}">fecha de nacimiento</td>
+            <td>
+                <a th:href="@{/madre/modificar/{serial}(serial=${dato.serialm})}" class="btn btn-info">Editar Madre</a>
+                <a th:href="@{/madre/{serial}(serial=${dato.serialm})}" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar Madre</a>
+            </td>
+        </tr>
+        <tr th:each="dato : ${padre}">
+            <td th:text="${dato.serialp}">Serial</td>
+            <td th:text="${dato.nombrep}">nombre</td>
+            <td th:text="${dato.apellidop}">apellido</td>
+            <td th:text="${dato.tipodocumentop}">tipo documento</td>
+            <td th:text="${dato.documentop}">numero</td>
+            <td th:text="${dato.fechanacimientop}">fecha de nacimiento</td>
+            <td>
+                <a th:href="@{/padre/modificar/{serial}(serial=${dato.serialp})}" class="btn btn-info">Editar Padre</a>
+                <a th:href="@{/padre/{serial}(serial=${dato.serialp})}" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar Padre</a>
+            </td>
+        </tr>
         </tbody>
+
     </table>
 </div>
 <script

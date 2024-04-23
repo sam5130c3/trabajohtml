@@ -13,7 +13,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @Data
 @ToString
-public class CiudadanoDto implements Serializable{
+public class MadreDto implements Serializable {
     private long serial;
     @NotBlank(message = "El nombre es obligatorio")
     private String nombre;
@@ -25,8 +25,4 @@ public class CiudadanoDto implements Serializable{
     private long documento;
     @NotBlank(message = "La fecha de nacimiento")
     private Date fechanacimiento;
-    @NotBlank(message = "Tiene madre")
-    private boolean tienemadre;
-    @NotBlank(message = "Tiene padre")
-    private boolean tienepadre;
 }

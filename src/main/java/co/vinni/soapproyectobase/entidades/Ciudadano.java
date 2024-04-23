@@ -35,4 +35,10 @@ public class Ciudadano implements Serializable {
     @Column(name = "EQU_FECHANACIMIENTO", nullable = false)
     private Date fechanacimiento;
 
+    @Column(name = "EQU_TIENEMADRE", nullable = false)
+    private boolean tienemadre;
+
+    @Column(name = "EQU_TIENEPADRE", nullable = false)
+    private boolean tienepadre;
+
 }
